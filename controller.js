@@ -32,3 +32,5 @@ export const getGolferList = () => {
 export const getGolfer = (golferId) => playerArray.filter(function(golfer) {
 	return golfer.playerId === golferId;
 })
+
+
