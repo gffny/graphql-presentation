@@ -7,11 +7,22 @@ import {
 	GraphQLString,
 } from 'graphql';
 
+import {
+	getGolferList
+} from './controller'	
+
+import {
+	GolferType
+} from './schemaType'
+
 const schema = new GraphQLSchema({
 	query: new GraphQLObjectType({
 		name: 'RootQueryType',
 		fields: {
-			//empty
+			golferList: {
+				type: new GraphQLList(GolferType),
+				resolve: () => getGolferList()
+			}
 		}
 	})
 });
