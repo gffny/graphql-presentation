@@ -8,7 +8,8 @@ import {
 } from 'graphql';
 
 import {
-	getGolferList
+	getGolferList,
+	getGolfer
 } from './controller'	
 
 import {
@@ -22,6 +23,15 @@ const schema = new GraphQLSchema({
 			golferList: {
 				type: new GraphQLList(GolferType),
 				resolve: () => getGolferList()
+			},
+			golfer: {
+				type: GolferType,
+				resolve: (__placeholder, {golferId}) => getGolfer(golferId),
+				args: {
+					golferId: {
+						type: GraphQLInt
+					}
+				}
 			}
 		}
 	})
