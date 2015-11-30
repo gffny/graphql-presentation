@@ -48,15 +48,17 @@ tournamentArray[0] = {
 }
 
 export const getGolferList = () => {
-	console.log(JSON.stringify(playerArray));
+	console.log('\ncalled getGolferList. json of playerArray: '+JSON.stringify(playerArray));
 	return Promise.resolve(playerArray);
 }
 
 export const getGolfer = (golferId) => {
+	console.log('\ncalled getGolfer('+golferId+') json of playerArray: '+JSON.stringify(playerArray[golferId]));
 	return Promise.resolve(playerArray[golferId]);
 }
 
 export const getTournament = (tournamentId) => {
+	console.log('\ncalled getTournament('+tournamentId+') json of tournamentArray: '+JSON.stringify(tournamentArray[tournamentId]));
 	return Promise.resolve(tournamentArray[tournamentId]);
 }
 

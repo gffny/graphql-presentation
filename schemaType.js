@@ -7,6 +7,10 @@ import {
 	GraphQLBoolean
 } from 'graphql';
 
+import {
+	getGolfer
+} from './controller'
+
 export const GolferType = new GraphQLObjectType({
 	name: 'Golfer',
 	description: 'defines the characterists of a golf player in the system',
@@ -46,6 +50,10 @@ export const TournamentType = new GraphQLObjectType({
 		},
 		winnerId: {
 			type: GraphQLInt
+		},
+		winner: {
+			type: GolferType,
+			resolve: (tournament) => getGolfer(tournament.winnerId)
 		}
 	})
 })
