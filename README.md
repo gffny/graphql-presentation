@@ -5,3 +5,5 @@ Install dependencies
 npm install
 
 npm install --save babel
+
+curl -XPOST -H 'Content-Type:application/graphql'  -d '{ golfer(golferId:0) { firstName, lastName }, tournament(tournamentId:0){ name, winner { firstName, lastName } } }' http://localhost:3000/graphql
