@@ -9,11 +9,13 @@ import {
 
 import {
 	getGolferList,
-	getGolfer
+	getGolfer,
+	getTournament
 } from './controller'	
 
 import {
-	GolferType
+	GolferType,
+	TournamentType
 } from './schemaType'
 
 const schema = new GraphQLSchema({
@@ -29,6 +31,15 @@ const schema = new GraphQLSchema({
 				resolve: (__placeholder, {golferId}) => getGolfer(golferId),
 				args: {
 					golferId: {
+						type: GraphQLInt
+					}
+				}
+			},
+			tournament: {
+				type: TournamentType,
+				resolve: (__placeholder, {tournamentId}) => getTournament(tournamentId),
+				args: {
+					tournamentId: {
 						type: GraphQLInt
 					}
 				}

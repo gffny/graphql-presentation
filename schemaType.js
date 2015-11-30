@@ -3,7 +3,8 @@ import {
 	GraphQLInt,
 	GraphQLList,
 	GraphQLString,
-	GraphQLEnumType
+	GraphQLEnumType,
+	GraphQLBoolean
 } from 'graphql';
 
 export const GolferType = new GraphQLObjectType({
@@ -21,6 +22,30 @@ export const GolferType = new GraphQLObjectType({
 		lastName: {
 			type: GraphQLString,
 			descripton: 'golfer\'s last name'
+		}
+	})
+})
+
+export const TournamentType = new GraphQLObjectType({
+	name: 'Tournament',
+	description: 'defines the characterists of a golf tournament in the system',
+	fields: () => ({
+		tournamentId: {
+			type: GraphQLInt,
+			descripton: 'an arbitrary id'
+		},
+		name: {
+			type: GraphQLString,
+			descripton: 'tournament\'s first name'
+		},
+		prizeMoney: {
+			type: GraphQLInt,
+		},
+		hasBeenPlay: {
+			type: GraphQLBoolean
+		},
+		winnerId: {
+			type: GraphQLInt
 		}
 	})
 })
