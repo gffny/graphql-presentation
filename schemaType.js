@@ -21,6 +21,27 @@ export const GolferType = new GraphQLObjectType({
 		lastName: {
 			type: GraphQLString,
 			descripton: 'golfer\'s last name'
+		},
+		preferredManufacturer: {
+			type: GraphQLString
+		},
+		lastWin: {
+			type: GraphQLString
+		},
+		careerPrizeMoney: {
+			type: GraphQLInt
+		},
+		careerWins: {
+			type: GraphQLInt
+		},
+		turnedProfessional: {
+			type: GraphQLInt
+		},
+		hometown: {
+			type: GraphQLString
+		},
+		worldRanking: {
+			type: GraphQLInt
 		}
 	})
 })
