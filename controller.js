@@ -62,4 +62,31 @@ export const getTournament = (tournamentId) => {
 	return Promise.resolve(tournamentArray[tournamentId]);
 }
 
+//np is a prefix for new player, to differentiate params from object keys
+export const upsertGolfer = (npPlayerId, npFirstName, npLastName, npPreferredManufacturer, 
+					npLastWin, npCareerPrizeMoney, npCareerWins, npTurnedProfessional, npHometown, npWorldRanking) => {
+	console.log('\nupserting golfer with id: '+npPlayerId);
+	if(npPlayerId == null) {
+		//create a new golfer
+		var newId = playerArray.length;
+		var newPlayer = {
+			playerId: newId,
+			firstName: npFirstName,
+			lastName: npLastName,
+			preferredManufacturer: npPreferredManufacturer,
+			lastWin: npLastWin,
+			careerPrizeMoney: npCareerPrizeMoney,
+			careerWins: npCareerWins,
+			turnedProfessional: npTurnedProfessional,
+			hometown: npHometown,
+			worldRanking: npWorldRanking
+		};
+		playerArray.push(newPlayer);
+		return Promise.resolve(newPlayer);
+	} else {
+		//update the golfer with id {playerId}
+		//TODO
+	}
+}
+
 
