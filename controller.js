@@ -62,6 +62,12 @@ export const getTournament = (tournamentId) => {
 	return Promise.resolve(tournamentArray[tournamentId]);
 }
 
+export const getRandomString = () => {
+
+	//do anything
+	return Promise.resolve('blah');
+}
+
 //np is a prefix for new player, to differentiate params from object keys
 export const upsertGolfer = (npPlayerId, npFirstName, npLastName, npPreferredManufacturer, 
 					npLastWin, npCareerPrizeMoney, npCareerWins, npTurnedProfessional, npHometown, npWorldRanking) => {

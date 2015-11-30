@@ -11,7 +11,8 @@ import {
 	getGolferList,
 	getGolfer,
 	getTournament,
-	upsertGolfer
+	upsertGolfer,
+	getRandomString
 } from './controller'	
 
 import {
@@ -44,6 +45,10 @@ const schema = new GraphQLSchema({
 						type: GraphQLInt
 					}
 				}
+			},
+			random: {
+				type: GraphQLString,
+				resolve: getRandomString()
 			}
 		}
 	}),
